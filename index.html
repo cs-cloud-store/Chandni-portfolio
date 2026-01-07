@@ -18,7 +18,7 @@
     gtag("js", new Date());
     gtag("config", "G-XXXXXXXXXX");
 
-    // Track specific events (guarded so it won't throw if GA hasn't loaded yet)
+    // Track specific events (guarded to prevent runtime errors if GA isn't ready)
     function trackEvent(category, action, label) {
       if (typeof gtag !== "function") return;
       gtag("event", action, {
@@ -216,7 +216,6 @@
     }
 
     .skill-category h4 { color: white; margin-bottom: 1rem; font-size: 1.1rem; }
-
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
     .skill-tag {
@@ -321,10 +320,19 @@
       <p class="subtitle">Ex-Google Manager (70+ Reports) • $3B+ Revenue Impact • AI/ML Expert • MBA Candidate</p>
 
       <div class="cta-buttons">
-        <a href="mailto:chandni.sharma.cloud@gmail.com" class="btn btn-primary" onclick="trackEvent('engagement', 'contact_click', 'Email Button')">
+        <a
+          href="mailto:chandni.sharma.cloud@gmail.com"
+          class="btn btn-primary"
+          onclick="trackEvent('engagement', 'contact_click', 'Email Button')"
+        >
           ✉️ Contact Me
         </a>
-        <a href="your-resume.pdf" class="btn btn-secondary" onclick="trackEvent('engagement', 'resume_download', 'Resume PDF')" download>
+        <a
+          href="your-resume.pdf"
+          class="btn btn-secondary"
+          onclick="trackEvent('engagement', 'resume_download', 'Resume PDF')"
+          download
+        >
           📄 Download Resume
         </a>
       </div>
@@ -337,8 +345,8 @@
     </div>
   </header>
 
-  <!-- Quick Stats -->
   <div class="container">
+    <!-- Quick Stats -->
     <div class="stats">
       <div class="stat-card">
         <div class="stat-icon">💼</div>
@@ -362,7 +370,7 @@
       </div>
     </div>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about">
       <div class="section-header" onclick="toggleSection('about')">
         <div class="section-title">
@@ -403,7 +411,7 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience">
       <div class="section-header" onclick="toggleSection('experience')">
         <div class="section-title">
@@ -414,7 +422,6 @@
       </div>
 
       <div class="section-content" id="experience-content">
-        <!-- Google - Customer Engineering Manager -->
         <div class="experience-item">
           <h3>Customer Engineering Manager - Technical Sales Solution Architecture People leader</h3>
           <div class="experience-meta">
@@ -432,7 +439,6 @@
           </ul>
         </div>
 
-        <!-- Google - AI Leader, Product Management -->
         <div class="experience-item">
           <h3>AI Leader, Product Management</h3>
           <div class="experience-meta">
@@ -451,7 +457,6 @@
           </ul>
         </div>
 
-        <!-- Norfolk & Dedham Group -->
         <div class="experience-item">
           <h3>Product Owner &amp; Solution Architect, Information Technology</h3>
           <div class="experience-meta">
@@ -462,12 +467,11 @@
             <li><strong>Lean, high-impact environment:</strong> Contributed to product management functions in a lean-team operating model (Note: Newbury Corporation ranked A by A.M. Best “Financial Services Insurance” ratings)</li>
             <li><strong>End-to-end product delivery:</strong> Led product lifecycle launches, managing requirements, roadmaps, and delivery across engineering, data science, design, and business stakeholders</li>
             <li><strong>High-value use cases:</strong> Scoped and delivered risk scoring, claims modeling, underwriting optimization, fraud detection, and loss forecasting with measurable outcomes</li>
-            <li><strong>Integrated solutions:</strong> Connected web apps, big data pipelines, predictive models, and BI dashboards into scalable, client-ready solutions</li>
-            <li><strong>Execution recognition:</strong> Recognized for driving the highest number of major releases in FY2016, demonstrating consistent delivery in fast-paced environments</li>
+            <li><strong>Integrated solutions:</strong> Connected web applications, big data pipelines, predictive models, and BI dashboards into scalable, client-ready solutions</li>
+            <li><strong>Execution recognition:</strong> Recognized for driving the highest number of major releases in FY2016, demonstrating consistent execution and impact in fast-paced environments</li>
           </ul>
         </div>
 
-        <!-- NTT -->
         <div class="experience-item">
           <h3>Senior Consultant &amp; Team Lead, Big Data Cloud Solutions</h3>
           <div class="experience-meta">
@@ -482,7 +486,6 @@
           </ul>
         </div>
 
-        <!-- Wipro -->
         <div class="experience-item">
           <h3>Manager, Digital Transformation &amp; Solutions Architecture</h3>
           <div class="experience-meta">
@@ -498,7 +501,7 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Core Competencies -->
     <section id="skills">
       <div class="section-header" onclick="toggleSection('skills')">
         <div class="section-title">
@@ -588,7 +591,334 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <
+    <!-- Technical Skills (non-repetitive with Core Competencies) -->
+    <section id="technical-skills">
+      <div class="section-header" onclick="toggleSection('technical-skills')">
+        <div class="section-title">
+          <span style="font-size: 1.5rem;">🧠</span>
+          <h2>Technical Skills</h2>
+        </div>
+        <span class="chevron" id="technical-skills-chevron">▼</span>
+      </div>
+
+      <div class="section-content" id="technical-skills-content">
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>AI &amp; Machine Learning Concepts</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">Computer Vision</span>
+              <span class="skill-tag">Deep Learning</span>
+              <span class="skill-tag">Reinforcement Learning</span>
+              <span class="skill-tag">Transfer Learning</span>
+              <span class="skill-tag">Few-/Zero-shot</span>
+              <span class="skill-tag">CoT / Tree-of-Thought</span>
+              <span class="skill-tag">Tokenization &amp; Embeddings</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h4>Technical Tools &amp; Frameworks</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Hugging Face Transformers</span>
+              <span class="skill-tag">OpenAI API</span>
+              <span class="skill-tag">Azure Machine Learning</span>
+              <span class="skill-tag">MLflow</span>
+              <span class="skill-tag">Kubeflow</span>
+              <span class="skill-tag">CrewAI</span>
+              <span class="skill-tag">MCP</span>
+              <span class="skill-tag">LangFlow</span>
+              <span class="skill-tag">Power Automate</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h4>Agentic Product, LLMOps &amp; Responsible AI</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">LLMOps</span>
+              <span class="skill-tag">Responsible AI</span>
+              <span class="skill-tag">Data Privacy &amp; Compliance</span>
+              <span class="skill-tag">Bias Mitigation</span>
+              <span class="skill-tag">Explainable AI (XAI)</span>
+              <span class="skill-tag">Human Evaluation</span>
+              <span class="skill-tag">LLM-as-judge Eval</span>
+              <span class="skill-tag">Semantic Search</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h4>Data &amp; Analytics</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Data Engineering</span>
+              <span class="skill-tag">Data Pipelines</span>
+              <span class="skill-tag">Feature Engineering</span>
+              <span class="skill-tag">A/B Testing</span>
+              <span class="skill-tag">Experimentation Frameworks</span>
+              <span class="skill-tag">Model Evaluation Metrics</span>
+              <span class="skill-tag">Data Labeling</span>
+              <span class="skill-tag">Data Governance</span>
+              <span class="skill-tag">Spark</span>
+              <span class="skill-tag">Hadoop</span>
+              <span class="skill-tag">NoSQL Databases</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h4>Advanced AI/ML Capabilities &amp; Trends</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Multi-modal AI</span>
+              <span class="skill-tag">Federated Learning</span>
+              <span class="skill-tag">Self-supervised Learning</span>
+              <span class="skill-tag">Model Compression</span>
+              <span class="skill-tag">Quantization</span>
+              <span class="skill-tag">Distillation</span>
+              <span class="skill-tag">Pruning</span>
+              <span class="skill-tag">Knowledge Graphs</span>
+              <span class="skill-tag">RLHF</span>
+              <span class="skill-tag">AutoML</span>
+              <span class="skill-tag">Synthetic Data</span>
+              <span class="skill-tag">PEFT / LoRA</span>
+              <span class="skill-tag">Distributed Training</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <div class="section-header" onclick="toggleSection('achievements')">
+        <div class="section-title">
+          <span style="font-size: 1.5rem;">🏆</span>
+          <h2>Key Achievements</h2>
+        </div>
+        <span class="chevron" id="achievements-chevron">▼</span>
+      </div>
+
+      <div class="section-content" id="achievements-content">
+        <!-- 1) Internal Companies -->
+        <div class="achievements-subtitle">
+          <h3>1) Internal Companies</h3>
+          <span>Wipro • NTT Data • Google</span>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <h4>Google — 0→1 Product Launch</h4>
+            <div class="achievement-metric">3-digit $M</div>
+            <p>Launched a new AI product (0→1) generating three-digit millions in revenue and contributing to Google Cloud’s top-three position in Gartner’s Cloud AI Magic Quadrant (2023).</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>Google — Org &amp; Revenue Impact</h4>
+            <div class="achievement-metric">$3B+ impact</div>
+            <p>Delivered $3B+ customer-attributed business impact through enterprise solution architecture, strategic GTM, and scalable AI/ML + GenAI programs.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>Google — Leadership &amp; Recognition</h4>
+            <div class="achievement-metric">70+ team</div>
+            <p>Scaled teams from 15 → 70+; enabled 150–200% quota; earned President’s Club (Top &lt;1%) and 3x Global Stratosphere winner (2021–2024).</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>NTT Data — Consulting Growth</h4>
+            <div class="achievement-metric">$25M+ deals</div>
+            <p>Drove $25M+ in consulting wins through technical leadership, executive alignment, and cloud/Big Data solution delivery.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>NTT Data — Cloud Migration Results</h4>
+            <div class="achievement-metric">30% cost ↓</div>
+            <p>Spearheaded enterprise migration to AWS from Cloudera, reducing infrastructure costs by ~30% while enabling modern analytics/ML workloads.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>Wipro — Transformation Leadership</h4>
+            <div class="achievement-metric">$10M+ impact</div>
+            <p>Led modernization programs in regulated financial environments delivering $10M+ business impact and consistent, high-quality delivery.</p>
+          </div>
+        </div>
+
+        <!-- 2) External World -->
+        <div class="achievements-subtitle">
+          <h3>2) External World</h3>
+          <span>Global cohorts • Buildathons • Awards</span>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <h4>Maven — Best Tech Impact Award</h4>
+            <div class="achievement-metric">Top cohort</div>
+            <p>Received “Best Tech Impact Award” in Maven’s Agentic AI Product Management cohort (200+ global professionals) for building StratAI in 2 months.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>StratAI — AI Market Forecasting</h4>
+            <div class="achievement-metric">Exec-ready</div>
+            <p>Built StratAI: an AI-driven forecasting platform combining real-time external signals (AI adoption, crypto, EV, supply chain, regulation) with scenario simulations and explainable executive summaries for high-stakes decisions.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>SheBuilds 2025 — Lovable Buildathon</h4>
+            <div class="achievement-metric">Top 7%</div>
+            <p>Selected among the top 7% globally (214 out of 2,844 applicants) across USA, India, Canada, UK, Singapore, Japan, Middle East, Europe, Latin America, Africa, and Australia.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>Advanced PM — Honors &amp; 1st Place</h4>
+            <div class="achievement-metric">🥇 + Honors</div>
+            <p>Earned Advanced Product Management Certification with Honors (taught by a former Senior Director of Google Product Management) and won 1st Place in the global summer cohort capstone with a working prototype + strategy.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>LinkedIn Capstone — TrueHire</h4>
+            <div class="achievement-metric">Trust engine</div>
+            <p>Designed “TrueHire” to address ghost jobs and rebuild trust: AI Verified Jobs badge → Job Quality Scores → community feedback loop → ecosystem monetization with $1.4B+ potential.</p>
+          </div>
+        </div>
+
+        <!-- 3) Personal Achievements -->
+        <div class="achievements-subtitle">
+          <h3>3) Personal Achievements</h3>
+          <span>Education • Executive learning</span>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <h4>MBA Candidate — Kelley School of Business</h4>
+            <div class="achievement-metric">Expected 2027</div>
+            <p>Focus on Technology Strategy, Innovation Management, and Executive Leadership.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>MS — AI + Information Systems</h4>
+            <div class="achievement-metric">Completed</div>
+            <p>Advanced foundation in AI/ML systems, data science, and enterprise architecture to ship solutions end-to-end.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h4>Executive Programs</h4>
+            <div class="achievement-metric">MIT + Purdue</div>
+            <p>Completed executive learning in Generative AI for Business Transformation (Purdue) and AI Business Executive Program (MIT Sloan).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="section-header" onclick="toggleSection('education')">
+        <div class="section-title">
+          <span style="font-size: 1.5rem;">🎓</span>
+          <h2>Education &amp; Certifications</h2>
+        </div>
+        <span class="chevron" id="education-chevron">▼</span>
+      </div>
+
+      <div class="section-content" id="education-content">
+        <div class="education-item">
+          <div class="education-header">
+            <div>
+              <h4>Master of Business Administration (MBA)</h4>
+              <p class="school">Indiana University - Kelley School of Business</p>
+            </div>
+            <span class="education-date">Expected May 2027</span>
+          </div>
+          <p style="color: #cbd5e1;">Focus: Technology Strategy, Innovation Management, Executive Leadership</p>
+        </div>
+
+        <div class="education-item">
+          <div class="education-header">
+            <div>
+              <h4>Master of Science in Information Systems with Artificial Intelligence</h4>
+              <p class="school">Northeastern University</p>
+            </div>
+            <span class="education-date">Completed</span>
+          </div>
+          <p style="color: #cbd5e1;">Specialized in AI/ML systems, data science, and enterprise architecture</p>
+        </div>
+
+        <div class="education-item">
+          <div class="education-header">
+            <div><h4>Executive Programs</h4></div>
+          </div>
+          <ul style="list-style: none; color: #cbd5e1; margin-top: 0.5rem;">
+            <li style="margin-bottom: 0.5rem;">✓ Generative AI for Business Transformation - Purdue University</li>
+            <li>✓ Artificial Intelligence Business Executive Program - MIT Sloan School of Management</li>
+          </ul>
+        </div>
+
+        <div class="education-item">
+          <div class="education-header">
+            <div>
+              <h4>Bachelor of Technology in Computer Science Engineering</h4>
+              <p class="school">WBUT, India</p>
+            </div>
+            <span class="education-date">Completed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <h3>Let's Connect</h3>
+      <p>
+        I'm actively exploring VP Solution Architecture opportunities in Agentic AI and Enterprise Cloud.
+        Open to remote roles with travel flexibility.
+      </p>
+
+      <div class="cta-buttons">
+        <a
+          href="mailto:chandni.sharma.cloud@gmail.com"
+          class="btn btn-primary"
+          onclick="trackEvent('engagement', 'footer_contact', 'Email Footer')"
+        >
+          Schedule a Call
+        </a>
+        <a
+          href="https://www.linkedin.com/in/chandnisharmacloud/"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Connect on LinkedIn
+        </a>
+      </div>
+
+      <p style="color: #64748b; font-size: 0.875rem; margin-top: 2rem;">
+        © 2025 Chandni Sharma. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSection(sectionId) {
+      const content = document.getElementById(sectionId + "-content");
+      const chevron = document.getElementById(sectionId + "-chevron");
+      if (!content || !chevron) return;
+
+      const isActive = content.classList.contains("active");
+      content.classList.toggle("active", !isActive);
+      chevron.classList.toggle("rotated", !isActive);
+
+      if (!isActive) {
+        trackEvent("section_view", "expand_section", sectionId);
+      }
+    }
+
+    window.addEventListener("load", function () {
+      trackEvent("page_view", "portfolio_loaded", "Initial Load");
+    });
+
+    const startTime = new Date();
+    window.addEventListener("beforeunload", function () {
+      const timeSpent = Math.round((new Date() - startTime) / 1000);
+      trackEvent("engagement", "time_on_page", timeSpent + " seconds");
+    });
+  </script>
+</body>
+</html>
